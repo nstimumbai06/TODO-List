@@ -10,10 +10,10 @@ app.title("To-Do App")
 task_widgets = []
 
 canvas = customtkinter.CTkCanvas(master=app, height=250, width=550)
-canvas.place(relx=0.5, rely=0.6, anchor=customtkinter.CENTER)
+canvas.place(relx=0.5, rely=0.5, anchor=customtkinter.CENTER)
 
 scrollbar = customtkinter.CTkScrollbar(master=app, orientation="vertical", command=canvas.yview)
-scrollbar.place(relx=0.95, rely=0.6, relheight=0.5, anchor=customtkinter.CENTER)
+scrollbar.place(relx=0.95, rely=0.5, relheight=0.5, anchor=customtkinter.CENTER)
 
 canvas.configure(yscrollcommand=scrollbar.set)
 
@@ -48,9 +48,9 @@ def remove_task():
         canvas.config(scrollregion=canvas.bbox("all"))
 
 add_button = customtkinter.CTkButton(master=app, text="Add Task", command=add_task)
-add_button.place(relx=0.3, rely=0.75, anchor=customtkinter.CENTER)
+add_button.place(relx=0.3, rely=0.85, anchor=customtkinter.CENTER)
 
 remove_button = customtkinter.CTkButton(master=app, text="Remove Last Task", command=remove_task)
-remove_button.place(relx=0.7, rely=0.75, anchor=customtkinter.CENTER)
+remove_button.place(relx=0.7, rely=0.85, anchor=customtkinter.CENTER)
 
 app.mainloop()
