@@ -10,10 +10,10 @@ app.title("To-Do App")
 task_widgets = []
 
 canvas = customtkinter.CTkCanvas(master=app, height=250, width=550)
-canvas.place(relx=0.5, rely=0.35, anchor=customtkinter.CENTER)
+canvas.place(relx=0.5, rely=0.6, anchor=customtkinter.CENTER)
 
 scrollbar = customtkinter.CTkScrollbar(master=app, orientation="vertical", command=canvas.yview)
-scrollbar.place(relx=0.95, rely=0.35, relheight=0.5, anchor=customtkinter.CENTER)
+scrollbar.place(relx=0.95, rely=0.6, relheight=0.5, anchor=customtkinter.CENTER)
 
 canvas.configure(yscrollcommand=scrollbar.set)
 
