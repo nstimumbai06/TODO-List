@@ -20,6 +20,9 @@ canvas.configure(yscrollcommand=scrollbar.set)
 tasks_frame = customtkinter.CTkFrame(master=canvas, fg_color="transparent")
 canvas.create_window((0, 0), window=tasks_frame, anchor="nw")
 
+title_label = customtkinter.CTkLabel(master=app, text="TODO LIST APP", font=("Arial", 24, "bold"))
+title_label.place(relx=0.5, rely=0.1, anchor=customtkinter.CENTER)
+
 task_entry = customtkinter.CTkEntry(master=app, placeholder_text="Enter a task", width=400)
 task_entry.place(relx=0.5, rely=0.2, anchor=customtkinter.CENTER)
 
