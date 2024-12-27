@@ -1,16 +1,15 @@
-# This is a sample Python script.
+import customtkinter
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+customtkinter.set_appearance_mode("System")
+customtkinter.set_default_color_theme("blue")
 
+app = customtkinter.CTk()
+app.geometry("400x240")
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+def button_function():
+    print("button pressed")
 
+button = customtkinter.CTkButton(master=app, text="CTkButton", command=button_function)
+button.place(relx=0.5, rely=0.5, anchor=customtkinter.CENTER)
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+app.mainloop()
