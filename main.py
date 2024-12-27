@@ -1,4 +1,8 @@
 import customtkinter
+import webbrowser
+import requests
+from PIL import Image
+from io import BytesIO
 
 customtkinter.set_appearance_mode("System")
 customtkinter.set_default_color_theme("blue")
@@ -55,5 +59,26 @@ add_button.place(relx=0.3, rely=0.85, anchor=customtkinter.CENTER)
 
 remove_button = customtkinter.CTkButton(master=app, text="Remove Last Task", command=remove_task)
 remove_button.place(relx=0.7, rely=0.85, anchor=customtkinter.CENTER)
+
+def open_github():
+    webbrowser.open("https://github.com/nstimumbai06/TODO-List")
+
+footer_frame = customtkinter.CTkFrame(master=app, fg_color="transparent", height=50)
+footer_frame.place(relx=0.5, rely=0.95, anchor=customtkinter.CENTER)
+
+image_url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4ExGUTEwAQn95uM4KUU-OZ7Zz1n2lDrnXfw&s"
+response = requests.get(image_url)
+
+github_icon = Image.open(BytesIO(response.content))
+github_icon = github_icon.resize((30, 30))
+
+github_ctk_icon = customtkinter.CTkImage(light_image=github_icon, dark_image=github_icon, size=(30, 30))
+
+github_label = customtkinter.CTkLabel(master=footer_frame, image=github_ctk_icon, text="", width=40, height=40)
+github_label.grid(row=0, column=0, padx=10)
+github_label.bind("<Button-1>", lambda e: open_github())
+
+copyright_label = customtkinter.CTkLabel(master=footer_frame, text="© n0step_", font=("Arial", 12), anchor="w")
+copyright_label.grid(row=0, column=1, padx=10, sticky="w")
 
 app.mainloop()
