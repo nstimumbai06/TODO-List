@@ -17,7 +17,7 @@ scrollbar.place(relx=0.95, rely=0.5, relheight=0.5, anchor=customtkinter.CENTER)
 
 canvas.configure(yscrollcommand=scrollbar.set)
 
-tasks_frame = customtkinter.CTkFrame(master=canvas)
+tasks_frame = customtkinter.CTkFrame(master=canvas, fg_color="transparent")
 canvas.create_window((0, 0), window=tasks_frame, anchor="nw")
 
 task_entry = customtkinter.CTkEntry(master=app, placeholder_text="Enter a task", width=400)
